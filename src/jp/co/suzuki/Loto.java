@@ -33,7 +33,7 @@ public class Loto {
 
 	//初期処理
 	void init(){
-		for(int i= 1; i < 46; i++){
+		for(int i= 1; i <= 46; i++){
 			targetList.add(i);
 		}
 	}

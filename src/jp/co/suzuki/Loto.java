@@ -12,9 +12,9 @@ public class Loto {
 		init();
 	}
 
-	void getLoto6(){
+	String getLoto6(){
 
-
+		String str = "";
 
 		Collections.shuffle(targetList);
 		int cnt = 0;
@@ -23,17 +23,27 @@ public class Loto {
 			cnt++;
 		}
 		Collections.sort(HitNum);
+		cnt = 0;
 		for(int num : HitNum){
-		System.out.print(num + " ");
+			if(cnt <= 4){
+				str = str + num+",";
+//				System.out.print(num + ",");
+			}else{
+				str = str + num;
+//				System.out.print(num);
+			}
+			cnt++;
 		}
-		System.out.print("\n");
+		str = str + "\n";
+//		System.out.print("\n");
 
 		HitNum.clear();
+		return str;
 	}
 
 	//初期処理
 	void init(){
-		for(int i= 1; i < 46; i++){
+		for(int i= 1; i <= 46; i++){
 			targetList.add(i);
 		}
 	}
